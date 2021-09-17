@@ -2,6 +2,36 @@
 
 int main() {
 
+    //-----------------------------------------------------------------------------------
+    //Punto numero 1
+
+    int integers[] = {22, 12, 33, 1, 4, 6, 10};
+    int * pInteger = integers;
+    int length = sizeof integers/sizeof (int);
+
+    cout<<"-------------------------------------------"<<endl;
+    cout<<"Selection Sort"<< endl;
+    cout<<"-------------------------------------------"<<endl;
+    cout<<"[";
+    for(int i = 0; i < length; i++){
+        cout<< integers[i] << "-";
+    }
+    cout << "]" <<endl;
+    cout<<"-------------------------------------------"<<endl;
+
+    sortBySelectionSort(pInteger, length);
+
+    cout<<"[";
+    for(int i = 0; i < length; i++){
+        cout<< integers[i] << "-";
+    }
+    cout << "]" <<endl;
+    cout<<"-------------------------------------------"<<endl;
+
+
+
+    //----------------------------------------------------------------------------------
+    //Punto numero 2
     GroupPlayers * group = new GroupPlayers();
 
 
@@ -11,24 +41,22 @@ int main() {
     group->addPlayer(205, "Marco");
     group->addPlayer(210, "Juan Ca");
     group->addPlayer(200, "Stefen");
-
-    group->listPlayers();
-    cout << "Cantidad de elementos de la lista: " << group->getQuantity() <<endl;
-
-    group->removePlayer(201);
-
     group->insertPlayer(206, "Alex", 0);
 
+
+    group->listPlayers();
+    cout << "Cantidad de elementos de la lista: " << group->getQuantity() <<endl<<endl<<endl;
+
+
+    //-----------------------------------------------------------------------------------
+    //Punto numero 3
+
+    cout << "-------------------------------------------"<<endl;
+    cout << "Lista ordenada mediante el algoritmo InsertionSort" <<endl;
+    cout << "-------------------------------------------"<<endl;
+    sortByInsertionSort(group);
     group->listPlayers();
 
-    cout<<"---------------------------"<<endl;
-
-    int arr[] = {1,2,3,4,5};
-    int *arrP = arr;
-    int length = sizeof(arr)/ sizeof(arrP[0]);
-
-    cout << sizeof(arr)/ sizeof(arrP[0])<< endl;
-    sortBySelectionSort(arrP);
 
     system("PAUSE");
     return EXIT_SUCCESS;

@@ -23,7 +23,7 @@ struct GroupPlayers{
             NodePlayer * newPlayer = new NodePlayer(new Player(pName, pNumber));
             lastNode->nextNode = newPlayer;
             lastNode = newPlayer;
-
+            return true;
         }
     }
 
@@ -122,8 +122,7 @@ struct GroupPlayers{
                 if(counter == (pPosition-1)){
                     player->nextNode = temporal->nextNode;
                     temporal->nextNode = player;
-
-                    counter++;
+                    break;
                 }else{
                     counter++;
                     temporal = temporal->nextNode;
