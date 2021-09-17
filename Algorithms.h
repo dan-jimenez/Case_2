@@ -9,9 +9,10 @@
 
 int auxilia;
 
-void sortBySelectionSort(int *pValuesToOrder){
+void sortBySelectionSort(int * pValuesToOrder){
     int minimum, listLength;
-    listLength = sizeof(pValuesToOrder)/sizeof(int);
+    listLength = 0;
+    cout<< listLength <<endl;
 
     for(int i =0; i < listLength; i++){
         minimum = i;
@@ -20,6 +21,20 @@ void sortBySelectionSort(int *pValuesToOrder){
         }
     }
 
+}
+
+void sortByInsertionSort(GroupPlayers *groupPlayers){
+
+    NodePlayer *actual = groupPlayers->firstNode->nextNode;
+    NodePlayer *previus = groupPlayers->firstNode;
+    int counter = 0, index = 1;
+    while (actual != NULL){
+        while(previus->player->name.compare(actual->player->name) > 0){
+            groupPlayers->insert(actual, (counter-1));
+            counter++;
+            actual = actual->nextNode;
+        }
+    }
 }
 
 

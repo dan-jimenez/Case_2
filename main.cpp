@@ -25,7 +25,9 @@ int main() {
 
     int arr[] = {1,2,3,4,5};
     int *arrP = arr;
+    int length = sizeof(arr)/ sizeof(arrP[0]);
 
+    cout << sizeof(arr)/ sizeof(arrP[0])<< endl;
     sortBySelectionSort(arrP);
 
     system("PAUSE");

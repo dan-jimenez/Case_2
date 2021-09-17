@@ -109,6 +109,29 @@ struct GroupPlayers{
             }
         }
     }
+
+    void insert(NodePlayer *player, int pPosition){
+        if(pPosition == 0){
+            player->nextNode = firstNode;
+            firstNode = player;
+        } else{
+            NodePlayer *temporal = firstNode;
+            int counter = 0;
+
+            while (temporal != NULL){
+                if(counter == (pPosition-1)){
+                    player->nextNode = temporal->nextNode;
+                    temporal->nextNode = player;
+
+                    counter++;
+                }else{
+                    counter++;
+                    temporal = temporal->nextNode;
+                }
+
+            }
+        }
+    }
 };
 
 
